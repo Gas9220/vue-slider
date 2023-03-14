@@ -38,7 +38,6 @@ createApp({
             return false;
         },
         prevImg() {
-            console.log("Chiamata")
             if (this.actualImg <= 0) { 
                 this.actualImg = this.slides.length - 1
                 
@@ -47,7 +46,6 @@ createApp({
             }  
         },
         nextImg() {
-            console.log("Chiamata")
             if (this.actualImg < this.slides.length - 1) { 
                 this.actualImg++ 
             } else {
@@ -56,6 +54,14 @@ createApp({
         },
         setCurrentImg(index) {
             this.actualImg = index;
+        },
+        setAutoplay() {
+            setInterval(() => {
+                this.nextImg()
+            }, 3000);
         }
+    },
+    mounted() {
+        this.setAutoplay()
     }
 }).mount('#app')
