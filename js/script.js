@@ -27,7 +27,8 @@ createApp({
                 }
             ],
             actualImg: 0,
-            activeThumb: 'active'
+            activeThumb: 'active',
+            interval: null
         }
     },
     methods: {
@@ -56,9 +57,12 @@ createApp({
             this.actualImg = index;
         },
         setAutoplay() {
-            setInterval(() => {
-                this.nextImg()
-            }, 3000);
+                this.interval = setInterval(() => {
+                    this.nextImg()
+                }, 3000);
+        },
+        stopAutoplay() {
+            clearInterval(this.interval)
         }
     },
     mounted() {
