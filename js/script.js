@@ -1,5 +1,3 @@
-
-
 const { createApp } = Vue
 
 createApp({
@@ -55,6 +53,9 @@ createApp({
             } else {
                 this.actualImg = 0
             }
+        },
+        setCurrentImg(index) {
+            this.actualImg = index;
         }
     }
 }).mount('#app')
