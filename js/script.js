@@ -32,23 +32,23 @@ createApp({
         }
     },
     methods: {
-         isImageSelected(index) {
+        isImageSelected(index) {
             if (this.actualImg === index) {
-                return true;      
+                return true;
             }
             return false;
         },
         prevImg() {
-            if (this.actualImg <= 0) { 
+            if (this.actualImg <= 0) {
                 this.actualImg = this.slides.length - 1
-                
+
             } else {
-                this.actualImg-- 
-            }  
+                this.actualImg--
+            }
         },
         nextImg() {
-            if (this.actualImg < this.slides.length - 1) { 
-                this.actualImg++ 
+            if (this.actualImg < this.slides.length - 1) {
+                this.actualImg++
             } else {
                 this.actualImg = 0
             }
@@ -57,9 +57,9 @@ createApp({
             this.actualImg = index;
         },
         setAutoplay() {
-                this.interval = setInterval(() => {
-                    this.nextImg()
-                }, 3000);
+            this.interval = setInterval(() => {
+                this.nextImg()
+            }, 3000);
         },
         stopAutoplay() {
             clearInterval(this.interval)
