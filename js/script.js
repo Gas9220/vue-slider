@@ -38,6 +38,23 @@ createApp({
                 return true;      
             }
             return false;
+        },
+        prevImg() {
+            console.log("Chiamata")
+            if (this.actualImg <= 0) { 
+                this.actualImg = this.slides.length - 1
+                
+            } else {
+                this.actualImg-- 
+            }  
+        },
+        nextImg() {
+            console.log("Chiamata")
+            if (this.actualImg < this.slides.length - 1) { 
+                this.actualImg++ 
+            } else {
+                this.actualImg = 0
+            }
         }
     }
 }).mount('#app')
